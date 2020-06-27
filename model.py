@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 import pickle
 import pandas as pd
-
+import os
 
 class ClassifierModel:
 
@@ -42,7 +42,8 @@ class ClassifierModel:
         knn_pickled_model.close()
 
     def load_pickle(self):
-        knn_pickled_model = open('pickle_knn_model.pkl', 'rb')
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        knn_pickled_model = open(dir_path + 'pickle_knn_model.pkl', 'rb')
         self.classifier = pickle.load(knn_pickled_model)
 
 
