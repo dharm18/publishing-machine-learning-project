@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/bootstrap.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/styles.css')}}">
+
+        <link rel="shortcut icon" href="../static/assets/cricket_icon.ico" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+        <script src="{{url_for('static', filename='js/jquery-3.3.1.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js?SameSite=None"></script>
+        <script src="{{url_for('static', filename='js/nprogress.js')}}"></script>
+        <link rel='stylesheet' href="{{url_for('static', filename='styles/nprogress.css')}}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+        <meta charset="UTF-8">
+        <title>
+            Iris Data Set Prediction
+        </title>
+    </head>
+
+    <body>
+                        
+        <div class="container">
+            <h1 class="display-4 heading" align="center">Iris Data Set Prediction</h1>
+
+
+                <div class="card card-primary" id="qualifierBox">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                                Iris Species Form
+                        </button>
+                        </h3>
+                    </div>
+
+                    <div id="qualifierBoxOne" aria-labelledby="qualifierBox" data-parent="#super12MatchBox">
+                        <div class="card-body">
+
+                        <form method="post" action="/checkResults" id="irisForm">
+                                <div class="row top-row">
+                                    <div class="col-md-4 col-6">
+                                        <input type="number" name="SepalLengthCm" id="SepalLengthCm" placeholder="Sepal Length in Cm" value="" step="any" required>
+                                    </div>
+
+                                    <div class="col-md-3 col-6">
+                                        <input type="number" name="SepalWidthCm" id="SepalWidthCm" placeholder="Sepal Width in Cm" value="" step="any" required>
+                                    </div>
+                                </div>
+
+                                <div class="row top-row">
+                                    <div class="col-md-4 col-6">
+                                        <input type="number" name="PetalLengthCm" id="PetalLengthCm" placeholder="Petal Length in Cm" value="" step="any" required>
+                                    </div>
+                                    <div class="col-md-4 col-6">
+                                        <input type="number" name="PetalWidthCm" id="PetalWidthCm" placeholder="Petal Width in Cm" value="" step="any" required>
+                                    </div>
+
+                                </div>
+                                <div class="row bottom-row">
+                                    <div class="col-md-3 col-12 ground_class">
+                                        Predicted Class :
+                                        <h4 id="predictedClass"></h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 submitButton" align='center'>
+                                        <input type="submit" value="Run Model" class="btn btn-success">
+                                </div>
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+    </body>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</html>
