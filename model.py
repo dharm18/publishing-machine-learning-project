@@ -43,7 +43,7 @@ class ClassifierModel:
 
     def load_pickle(self):
         dir_path = os.path.dirname(os.path.realpath(__file__))
-        knn_pickled_model = open(dir_path + 'pickle_knn_model.pkl', 'rb')
+        knn_pickled_model = open(dir_path + '/pickle_knn_model.pkl', 'rb')
         self.classifier = pickle.load(knn_pickled_model)
 
 
